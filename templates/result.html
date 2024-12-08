@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Video Recommendation System</title>
+
+  <!-- External CSS Libraries -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+  <!-- Custom Styles -->
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #43a286;
+      color: white;
+      text-align: center;
+      padding: 50px 0;
+      font-size: 36px;
+    }
+
+    nav {
+      background-color: #43a286;
+      color: white;
+    }
+
+    .navbar-nav a {
+      color: white !important;
+      padding: 15px 20px;
+      font-size: 16px;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .navbar-nav a:hover {
+      background-color: #333;
+      border-radius: 5px;
+    }
+
+    .container {
+      margin-top: 40px;
+      padding: 0 15px;
+    }
+
+    .flex-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    .thumbnail {
+      margin-bottom: 30px;
+      border: none;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .thumbnail img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .thumbnail .caption {
+      background-color: #fff;
+      padding: 15px;
+      border-top: 1px solid #eee;
+      border-radius: 0 0 10px 10px;
+    }
+
+    .thumbnail .caption a {
+      color: #43a286;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    .thumbnail .caption a:hover {
+      color: #333;
+    }
+
+    .btn-primary {
+      background-color: #43a286;
+      border: none;
+      padding: 10px 20px;
+      text-transform: uppercase;
+      font-weight: 600;
+      color: white;
+      border-radius: 5px;
+    }
+
+    .btn-primary:hover {
+      background-color: #333;
+    }
+
+    h2 {
+      color: #d5ede6;
+      font-size: 28px;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+    }
+
+    footer a {
+      color: white;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* Media Queries for Responsive Design */
+    @media (max-width: 767px) {
+      .flex-row {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .thumbnail {
+        width: 100%;
+        margin-bottom: 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Video Recommendation System</h1>
+  </header>
+
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand" href="#">Logo</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/search_topic">Search by Topic</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <h2>Top Videos:</h2>
+    <div class="flex-row">
+      <!-- Video 1 -->
+      <div class="col-md-4">
+        <div class="thumbnail">
+          <img src="{{url[0]}}" alt="Video 1">
+          <div class="caption">
+
+            <p>
+              <a class="btn btn-primary" href="{{result[0]}}">Watch this</a>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Video 2 -->
+      <div class="col-md-4">
+        <div class="thumbnail">
+          <img src="{{url[1]}}" alt="Video 2">
+          <div class="caption">
+
+            <p>
+              <a class="btn btn-primary" href="{{result[1]}}">Watch this</a>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Video 3 -->
+      <div class="col-md-4">
+        <div class="thumbnail">
+          <img src="{{url[2]}}" alt="Video 3">
+          <div class="caption">
+
+            <p>
+              <a class="btn btn-primary" href="{{result[2]}}">Watch this</a>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Video 4 -->
+      <div class="col-md-4">
+        <div class="thumbnail">
+          <img src="{{url[3]}}" alt="Video 4">
+          <div class="caption">
+
+            <p>
+              <a class="btn btn-primary" href="{{result[3]}}">Watch this</a>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Video 5 -->
+      <div class="col-md-4">
+        <div class="thumbnail">
+          <img src="{{url[4]}}" alt="Video 5">
+          <div class="caption">
+
+            <p>
+              <a class="btn btn-primary" href="{{result[4]}}">Watch this</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- External JS Libraries -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

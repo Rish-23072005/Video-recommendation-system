@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Top 5 Videos</title>
+   <style>
+      body {
+         font-family: 'Arial', sans-serif;
+         background-color: #f7f7f7;
+         margin: 0;
+         padding: 0;
+         color: #333;
+      }
+
+      h1 {
+         text-align: center;
+         padding: 30px;
+         background-color: #007bff;
+         color: white;
+         margin: 0;
+         font-size: 32px;
+         font-weight: 500;
+      }
+
+      table {
+         width: 80%;
+         margin: 40px auto;
+         border-collapse: collapse;
+         text-align: center;
+         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+         background-color: white;
+         border-radius: 8px;
+         overflow: hidden;
+      }
+
+      td {
+         padding: 15px;
+         border-bottom: 1px solid #ddd;
+      }
+
+      td a {
+         color: #007bff;
+         text-decoration: none;
+         font-weight: 500;
+         font-size: 16px;
+      }
+
+      td a:hover {
+         text-decoration: underline;
+      }
+
+      img {
+         border-radius: 8px;
+         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+         transition: transform 0.3s ease-in-out;
+      }
+
+      img:hover {
+         transform: scale(1.05);
+      }
+
+      tr:hover {
+         background-color: #f1f1f1;
+      }
+
+      @media only screen and (max-width: 768px) {
+         h1 {
+            font-size: 28px;
+         }
+
+         table {
+            width: 95%;
+         }
+
+         td {
+            padding: 12px;
+         }
+
+         img {
+            width: 60px;
+            height: 60px;
+         }
+
+         td a {
+            font-size: 14px;
+         }
+      }
+
+      @media only screen and (max-width: 480px) {
+         h1 {
+            font-size: 24px;
+         }
+
+         img {
+            width: 50px;
+            height: 50px;
+         }
+
+         td {
+            padding: 10px;
+         }
+      }
+   </style>
+</head>
+
+<body>
+   <h1>Top 5 Videos</h1>
+   <table>
+      {% for value in result %}
+      <tr>
+         <td>
+            <a href="https://www.youtube.com/watch?v={{ value[0] }}" target="_blank">Click here to watch this video</a>
+            <br>{{ value[0] }}
+         </td>
+      </tr>
+      {% endfor %}
+
+      {% for img_url in url %}
+      <tr>
+         <td>
+            <img src="{{ img_url }}" alt="Video Thumbnail" height="80" width="80">
+         </td>
+      </tr>
+      {% endfor %}
+   </table>
+</body>
+
+</html>
